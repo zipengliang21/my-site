@@ -24,13 +24,58 @@ a {
   color: inherit
 }
 
-body {
-  font-size: 16px;
-  line-height: 1.2;
-  background-color: #F5F4F5;
+body, button, input, select, textarea {
+  font:12px/1.5tahoma, arial, \5b8b\4f53;
 }
-.oneLine {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+
+h1, h2, h3, h4, h5, h6{
+  font-size:100%;
+  color:rgb(51, 51, 51);
 }
+
+address, cite, dfn, em, var {
+  font-style:normal;
+}
+
+code, kbd, pre, samp {
+  font-family:couriernew, courier, monospace;
+}
+
+small{
+  font-size:12px;
+}
+
+sup {
+  vertical-align:text-top;
+}
+
+sub{
+  vertical-align:text-bottom;
+}
+
+legend {
+  color:#000;
+}
+
+fieldset, img {
+  border:0;
+}
+
+button, input, select, textarea {
+  font-size:100%;
+}
+
+table {
+  border-collapse:collapse; border-spacing:0;
+}
+
+html,body,#root{
+  width: 100%;
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+}
+
