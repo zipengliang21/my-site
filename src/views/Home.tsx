@@ -62,7 +62,6 @@ function Home() {
              <h2>Zipeng Liang</h2>
              <ul>
                 <li>Software Engineer</li>
-                <li>Full Stack Developer</li>
                 <li>UBC Student</li>
              </ul>
              <p>I am a full stack engineer that builds modern software apps.</p>
