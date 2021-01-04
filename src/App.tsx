@@ -1,6 +1,5 @@
 import React from "react";
 import {
-   HashRouter as Router,
    NavLink, Route, Switch
 } from "react-router-dom";
 import styled from "styled-components";
