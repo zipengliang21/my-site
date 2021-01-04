@@ -71,7 +71,7 @@ function Home() {
 
           <section className="project">
              <div className="title">
-                <h3>My Projects</h3>
+                <h3>Recent Projects</h3>
                 <p>You can find more in the projects overview.</p>
              </div>
              <ProjectList dataSource = {projectData.data}/>

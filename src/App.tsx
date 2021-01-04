@@ -5,6 +5,7 @@ import {
 import styled from "styled-components";
 import Home from "./views/Home";
 import NoMatch from "./views/NoMatch";
+import Projects from "./views/Projects";
 
 const AppWrapper = styled.div`
   //background: #051221;
@@ -100,6 +101,7 @@ function App() {
                       <Home/>
                    </Route>
                    <Route exact path="/projects">
+                      <Projects/>
                    </Route>
                    <Route exact path="/projects/:id">
                    </Route>
