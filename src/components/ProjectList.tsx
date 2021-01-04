@@ -1,8 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import {Link} from "react-router-dom";
+const p1 = require("../assets/project/Morney.png");
+const p2 = require("../assets/project/ZL.png");
+const p3 = require("../assets/avatar.png");
 
 const ProjectListWrapper = styled.div`
+    margin-top: 80px;
     > ul{
         display: flex;
         justify-content: space-between;
@@ -56,18 +60,16 @@ function ProjectList({dataSource}: any) {
        <ProjectListWrapper>
           <ul>
              {
+
                 dataSource && dataSource.map((item:any) =>
                     <li key={item.id}>
                        <Link to={`/projects/${item.id}`}>
                           <div className="cover">
-                             <img src={item.cover} alt={"Project"}/>
+                             <img src={item.id === 1? p1 : item.id === 2? p2 : p3} alt={"Project"}/>
                           </div>
                           <div className="projectBrief">
                              <h3>{item.title}</h3>
                              <p>{item.brief}</p>
-                             <div className="tag">
-                                {item.tags && item.tags.map((i:any) => <span key={i}>{i}</span>)}
-                             </div>
                           </div>
                        </Link>
                     </li>

@@ -101,6 +101,8 @@ function App() {
                    </Route>
                    <Route exact path="/projects">
                    </Route>
+                   <Route exact path="/projects/:id">
+                   </Route>
                    <Route exact path="/resume">
                    </Route>
                    <Route path="*">
