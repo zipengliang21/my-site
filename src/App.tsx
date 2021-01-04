@@ -6,6 +6,7 @@ import styled from "styled-components";
 import Home from "./views/Home";
 import NoMatch from "./views/NoMatch";
 import Projects from "./views/Projects";
+import ProjectDetail from "./views/ProjectDetail";
 
 const AppWrapper = styled.div`
   //background: #051221;
@@ -59,7 +60,6 @@ const HeaderWrapper = styled.header`
 `;
 
 const ContentWrapper = styled.section`
-  text-align: center;
   flex: 1;
 `;
 
@@ -104,6 +104,7 @@ function App() {
                       <Projects/>
                    </Route>
                    <Route exact path="/projects/:id">
+                      <ProjectDetail/>
                    </Route>
                    <Route exact path="/resume">
                    </Route>
