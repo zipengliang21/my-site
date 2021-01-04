@@ -3,24 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {HashRouter as Router, Route, Switch} from "react-router-dom";
 import Home from "./views/Home";
 import NoMatch from "./views/NoMatch";
+import {HashRouter as Router} from "react-router-dom";
 
 ReactDOM.render(
     <Router>
-       <Switch>
-          <Route exact path="/">
-             <Home/>
-          </Route>
-          <Route exact path="/projects">
-          </Route>
-          <Route exact path="/resume">
-          </Route>
-          <Route path="*">
-             <NoMatch/>
-          </Route>
-       </Switch>
        <App />
     </Router>,
   document.getElementById('root')

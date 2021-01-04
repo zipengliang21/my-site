@@ -1,28 +1,27 @@
 import React from "react";
 import {
    HashRouter as Router,
-   Switch,
-   Route,
-   NavLink
+   NavLink, Route, Switch
 } from "react-router-dom";
+import styled from "styled-components";
 import Home from "./views/Home";
 import NoMatch from "./views/NoMatch";
-import styled from "styled-components";
 
 const AppWrapper = styled.div`
-  background: #051221;
-  color: #FFFFFF;
+  //background: #051221;
+  //color: #FFFFFF;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 `;
 
 const HeaderWrapper = styled.header`
+  background-color: rgb(250, 250, 250);
   height: 60px;
   .selected{
-      color: #1D78E0!important;
+      color: #333!important;
       padding-bottom: 5px;
-      border-bottom: 3px solid #5563EE;
+      border-bottom: 3px solid #333;
     }
   .box{
       width: 70%;
@@ -38,7 +37,7 @@ const HeaderWrapper = styled.header`
       .boxLeft{
             text-transform: uppercase;
         font-size: 1.8em;
-        color: #1D78E0;
+        color: rgb(51, 51, 51);
       }
       .boxLeft::after {
         content: "◦◦◦";
@@ -50,7 +49,7 @@ const HeaderWrapper = styled.header`
         p{
           margin: 0px 35px;
           font-size: 1.5em;
-          color: #1D78E0;
+          color: rgb(102, 102, 102);
         }
       }
    div{
@@ -97,6 +96,18 @@ function App() {
              </div>
           </HeaderWrapper>
           <ContentWrapper>
+                <Switch>
+                   <Route exact path="/">
+                      <Home/>
+                   </Route>
+                   <Route exact path="/projects">
+                   </Route>
+                   <Route exact path="/resume">
+                   </Route>
+                   <Route path="*">
+                      <NoMatch/>
+                   </Route>
+                </Switch>
           </ContentWrapper>
           <Footer>
              <p>© <b>2021 Zipeng Liang</b></p>
