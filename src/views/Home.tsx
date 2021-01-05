@@ -1,40 +1,58 @@
 import React from "react";
 import styled from "styled-components";
 import ProjectList from "components/ProjectList";
-import projectData from "../projects.json"
+import projectData from "../projects.json";
+import Fade from "react-reveal/Fade";
 
 const avatar = require("../assets/avatar.png");
 
 const HomeWrapper = styled.div`
     flex: 1;
-    width: 70%;
-    margin: 0px auto;
+    width: 800px;
+    height: 100%;
+    max-width: 100%;
+    margin: 0 auto;
     .brief{
+       display: flex;
        text-align: center;
-       h2{
-         padding: 12px 0px;
-         font-size: 20px;
+       margin: 0 auto;
+       .image{
+         align-self: flex-end;
+         flex-shrink: 0;
+         h2{
+           padding: 12px 0px;
+           font-size: 20px;
+         }
+         img{
+           width: 250px;
+           height: 250px;
+           border-radius: 120px;
+           margin-top: 20px;
+         }
+         ul{
+           display: flex;
+           justify-content: center;
+            li{
+              padding: 6px 10px;
+              background: rgba(87, 199, 255, 0.1);
+              margin: 12px 5px;
+              border-radius: 3px;
+           }      
+         }
+         p{
+           padding: 12px 0px;
+           color: rgba(0, 0, 0, 0.7);
+         }
        }
-       img{
-          width: 150px;
-          height: 150px;
-          border-radius: 120px;
+       .description{
+         //width: 33.3%;
+          align-self: center;
           margin-top: 20px;
+          margin-left: 80px;
+              font-size: 1.8rem;
+    line-height: 1.5;
+    font-weight: 100;
        }
-       ul{
-        display: flex;
-        justify-content: center;
-         li{
-            padding: 6px 10px;
-            background: rgba(87, 199, 255, 0.1);
-            margin: 12px 5px;
-            border-radius: 3px;
-         }      
-       }
-       p{
-        padding: 12px 0px;
-        color: rgba(0, 0, 0, 0.7);
-      }
      }
      .project{
         text-align: center;
@@ -58,23 +76,28 @@ function Home() {
    return (
        <HomeWrapper>
           <section className="brief">
-             <img src={avatar} alt={"Jepson"}/>
-             <h2>Zipeng Liang</h2>
-             <ul>
-                <li>Software Engineer</li>
-                <li>UBC Student</li>
-             </ul>
-             <p>I am a full stack engineer that builds modern software apps.</p>
+             <div className="image">
+                <img src={avatar} alt={"Jepson"}/>
+                <h2>Zipeng Liang</h2>
+                <ul>
+                   <li>Software Engineer</li>
+                   <li>UBC Student</li>
+                </ul>
+             </div>
+             <p className="description">I am a <strong>full stack engineer</strong> that builds
+                <strong> modern software apps.</strong></p>
              {/*<div>Github</div>*/}
              {/*<div>LinkedIn</div>*/}
           </section>
 
           <section className="project">
-             <div className="title">
-                <h3>Recent Projects</h3>
-                <p>You can find more in the projects overview.</p>
-             </div>
-             <ProjectList dataSource = {projectData.data}/>
+             <Fade top>
+                <div className="title">
+                   <h3>Recent Projects</h3>
+                </div>
+             </Fade>
+             <ProjectList dataSource={projectData.data}/>
+             <p>You can find more in the projects overview.</p>
           </section>
        </HomeWrapper>
    );

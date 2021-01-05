@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import {Link} from "react-router-dom";
+import Fade from "react-reveal/Fade";
+
 const p1 = require("../assets/project/Morney.png");
 const p2 = require("../assets/project/ZL.png");
 const p3 = require("../assets/avatar.png");
@@ -60,18 +62,20 @@ function ProjectList({dataSource}: any) {
        <ProjectListWrapper>
           <ul>
              {
-                dataSource && dataSource.map((item:any) =>
-                    <li key={item.id}>
-                       <Link to={`/projects/${item.id}`}>
-                          <div className="cover">
-                             <img src={item.id === 1? p1 : item.id === 2? p2 : p3} alt={"Project"}/>
-                          </div>
-                          <div className="projectBrief">
-                             <h3>{item.title}</h3>
-                             <p>{item.brief}</p>
-                          </div>
-                       </Link>
-                    </li>
+                dataSource && dataSource.map((item: any, index: number) =>
+                    <Fade {...(index % 2 === 0 ? {left: true} : {right: true})}>
+                       <li key={item.id}>
+                          <Link to={`/projects/${item.id}`}>
+                             <div className="cover">
+                                <img src={item.id === 1 ? p1 : item.id === 2 ? p2 : p3} alt={"Project"}/>
+                             </div>
+                             <div className="projectBrief">
+                                <h3>{item.title}</h3>
+                                <p>{item.brief}</p>
+                             </div>
+                          </Link>
+                       </li>
+                    </Fade>
                 )
              }
           </ul>
