@@ -121,7 +121,6 @@ function App() {
           </ContentWrapper>
           <Footer>
              <p>© <b>2021 Zipeng Liang</b></p>
-             <p>Jepson</p>
           </Footer>
        </AppWrapper>
    );

@@ -7,6 +7,7 @@ import Fade from "react-reveal/Fade";
 const avatar = require("../assets/avatar.png");
 
 const HomeWrapper = styled.div`
+//font-family: 'Poppins', sans-serif;
     flex: 1;
     width: 800px;
     height: 100%;
@@ -77,7 +78,7 @@ function Home() {
           <section className="brief">
              <div className="image">
                 <img src={avatar} alt={"Jepson"}/>
-                <h2>Zipeng Liang</h2>
+                <h2>Zipeng Liang (Jepson)</h2>
                 <ul>
                    <li>Software Engineer</li>
                    <li>UBC Student</li>
