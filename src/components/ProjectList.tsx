@@ -14,28 +14,28 @@ const ProjectListWrapper = styled.div`
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
-         > li{
-            width: 45%;            
-            margin-bottom: 45px;
+         > li{                      
+            margin: 0 auto 125px auto;
             > a{
               display: inline-flex;
               justify-content: space-between;
               .cover{
                 > img{
-                  width: 100px;
-                  border-radius: 5px;
+                  width: 145px;
+                  border-radius: 10px;
                 }
               }
               .projectBrief{
                 text-align: left;
                 padding-left: 15px;
                 > h3{
-                  font-size: 18px;
+                  font-size: 1.8rem;
                   color: rgb(51, 51, 51);
                 }
                 > p{
                   padding: 8px 0px;
                   color: rgba(0, 0, 0, 0.7);
+                  font-size: 1.4rem;
                   line-height: 1.8;
                 }
                 .tag{

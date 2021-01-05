@@ -45,13 +45,12 @@ const HomeWrapper = styled.div`
          }
        }
        .description{
-         //width: 33.3%;
           align-self: center;
           margin-top: 20px;
           margin-left: 80px;
-              font-size: 1.8rem;
-    line-height: 1.5;
-    font-weight: 100;
+          font-size: 1.8rem;
+          line-height: 1.5;
+          font-weight: 100;
        }
      }
      .project{
@@ -59,8 +58,8 @@ const HomeWrapper = styled.div`
         padding-top: 40px;
         padding-bottom: 25px;
         .title{
-          h3{
-            font-size: 30px;
+          h2{
+            font-size: 2.4rem;
             padding-bottom: 12px;
             color: rgba(0,0,0,.8);
             font-weight: 400;
@@ -93,7 +92,7 @@ function Home() {
           <section className="project">
              <Fade top>
                 <div className="title">
-                   <h3>Recent Projects</h3>
+                   <h2>Recent Projects</h2>
                 </div>
              </Fade>
              <ProjectList dataSource={projectData.data}/>
