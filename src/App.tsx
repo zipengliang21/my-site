@@ -35,21 +35,22 @@ const HeaderWrapper = styled.header`
         text-decoration:none; 
       }
       .boxLeft{
-            text-transform: uppercase;
-        font-size: 1.8em;
-        color: rgb(51, 51, 51);
+        text-transform: uppercase;
+        font-size: 1.5em;
+        color: #051221;
       }
       .boxLeft::after {
         content: "◦◦◦";
         margin-left: 0.5em;
+        color: #80B2ED;
       }
       .boxRight{
         display: inline-flex;
         justify-content: flex-start;
         p{
           margin: 0px 35px;
-          font-size: 1.5em;
-          color: rgb(102, 102, 102);
+          font-size: 1.3em;
+          color: #051221;;
         }
       }
    div{
@@ -85,7 +86,7 @@ function App() {
           <HeaderWrapper>
              <div className="box">
                 <NavLink to="/">
-                   <div className="boxLeft">Zipeng Liang</div>
+                   <div className="boxLeft"><strong>Zipeng Liang</strong></div>
                 </NavLink>
                 <div className="boxRight">
                    <NavLink exact to="/" activeClassName="selected">

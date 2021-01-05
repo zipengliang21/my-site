@@ -7,9 +7,8 @@ import Fade from "react-reveal/Fade";
 const avatar = require("../assets/avatar.png");
 
 const HomeWrapper = styled.div`
-//font-family: 'Poppins', sans-serif;
     flex: 1;
-    width: 800px;
+    width: 700px;
     height: 100%;
     max-width: 100%;
     margin: 0 auto;
