@@ -1,12 +1,11 @@
 import React from "react";
-import {
-   NavLink, Route, Switch
-} from "react-router-dom";
+import {NavLink, Route, Switch} from "react-router-dom";
 import styled from "styled-components";
 import Home from "./views/Home";
 import NoMatch from "./views/NoMatch";
 import Projects from "./views/Projects";
 import ProjectDetail from "./views/ProjectDetail";
+import projectData from "projects.json";
 
 const AppWrapper = styled.div`
   //background: #051221;
@@ -74,6 +73,12 @@ const Footer = styled.footer`
   }
 `;
 
+const project = (dataSource: any, id: string) => {
+   return dataSource.filter((project: any) => {
+      return project.id === parseInt(id);
+   })[0];
+};
+
 function App() {
    return (
        <AppWrapper>
@@ -84,7 +89,7 @@ function App() {
                 </NavLink>
                 <div className="boxRight">
                    <NavLink exact to="/" activeClassName="selected">
-                      <p >Home</p>
+                      <p>Home</p>
                    </NavLink>
                    <NavLink exact to="/projects" activeClassName="selected">
                       <p>Projects</p>
@@ -96,22 +101,23 @@ function App() {
              </div>
           </HeaderWrapper>
           <ContentWrapper>
-                <Switch>
-                   <Route exact path="/">
-                      <Home/>
-                   </Route>
-                   <Route exact path="/projects">
-                      <Projects/>
-                   </Route>
-                   <Route exact path="/projects/:id">
-                      <ProjectDetail/>
-                   </Route>
-                   <Route exact path="/resume">
-                   </Route>
-                   <Route path="*">
-                      <NoMatch/>
-                   </Route>
-                </Switch>
+             <Switch>
+                <Route exact path="/">
+                   <Home/>
+                </Route>
+                <Route exact path="/projects">
+                   <Projects/>
+                </Route>
+                <Route exact path="/projects/:id"
+                       render={(props) => {
+                          return <ProjectDetail project={project(projectData.data, props.match.params.id)}/>;
+                       }}/>
+                <Route exact path="/resume">
+                </Route>
+                <Route path="*">
+                   <NoMatch/>
+                </Route>
+             </Switch>
           </ContentWrapper>
           <Footer>
              <p>© <b>2021 Zipeng Liang</b></p>

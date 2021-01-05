@@ -60,7 +60,6 @@ function ProjectList({dataSource}: any) {
        <ProjectListWrapper>
           <ul>
              {
-
                 dataSource && dataSource.map((item:any) =>
                     <li key={item.id}>
                        <Link to={`/projects/${item.id}`}>

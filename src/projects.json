@@ -1,25 +1,42 @@
-
 {
-  "code":200,
+  "code": 200,
   "msg": "Request Success!",
   "data": [
     {
-      "title":"Morney",
-      "brief":"A simple web app for recording your expense and income",
-      "cover":"",
-      "id":1
+      "title": "Morney",
+      "brief": "A simple web app for recording your expense and income",
+      "descriptions": [
+        "This is a simple Tally Book Web Application based on React / React Router / Custom Hooks / webpack / TypeScript / LocalStorage",
+        "The feature is fast and easy.",
+        "Working in this project helps me have a deeper understanding of webpack, Hooks API, and SVG Icon."
+      ],
+      "preview": "https://zipengliang21.github.io/Morney-Website/",
+      "sourceCode": "https://github.com/zipengliang21/Morney",
+      "id": 1
     },
     {
-      "title":"my-site",
-      "brief":"About this website, and what makes it awesome.",
-      "cover":"",
-      "id":2
+      "title": "My-Site",
+      "brief": "About this website, and what makes it awesome.",
+      "descriptions": [
+        "- Sketch for UI prototyping",
+        "- React.js for functional-based, declarative UI development.",
+        "- TypeScript for enhancing code readability and catching bugs early at compile time.",
+        "- styled-components for modular, scoped and dynamic CSS styling",
+        "- And so much more..."
+      ],
+      "preview": "http://localhost:3000/#/",
+      "sourceCode": "http://localhost:3000/#/",
+      "id": 2
     },
     {
-      "title":"Rate My Restaurant",
-      "brief":"End-to-end admin system for users rate restaurants",
-      "cover":"",
-      "id":3
+      "title": "Rate My Restaurant",
+      "brief": "End-to-end admin system for UBC students to rate restaurants",
+      "descriptions": [
+        "RateMyRestaurant for UBC students"
+      ],
+      "preview": "",
+      "sourceCode": "http://localhost:3000/#/",
+      "id": 3
     }
   ]
 }

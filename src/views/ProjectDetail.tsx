@@ -27,29 +27,20 @@ const Wrapper = styled.div`
     }
 `;
 
-function ProjectDetail() {
+function ProjectDetail(props: any) {
+   const project = props.project;
    return (
        <Wrapper>
           <div className="box">
              <div className="title">
-                <h1>Jepson's Tally Book</h1>
+                <h1>{project.title}</h1>
              </div>
              <section className="content">
-                <p>This is a simple Tally Book Web Application based on
-                   React / React Router / Custom Hooks / webpack / TypeScript / LocalStorage
-                </p>
-                <p>
-                   The feature is fast and easy.
-                </p>
-                <p>
-                   Working in this project helps me have a deeper understanding of webpack, Hooks API, and SVG Icon.
-                </p>
-                <p>
-                   Preview Link: https://zipengliang21.github.io/Morney-Website/
-                </p>
-                <p>
-                   Source Code Link: https://github.com/zipengliang21/Morney
-                </p>
+                {project.descriptions.map((description: string, index: number) => {
+                   return <p key={index}>{description}</p>;
+                })}
+                {project.preview? <p>{`Preview Link: ` + project.preview}</p> : null}
+                {project.sourceCode? <p>{`Source Code Link: ` + project.sourceCode}</p> : null}
              </section>
           </div>
        </Wrapper>
