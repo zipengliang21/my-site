@@ -106,7 +106,7 @@ function App() {
           <HeaderWrapper>
              <div className="box">
                 <NavLink to="/">
-                   <div className="boxLeft"><span style={{ fontWeight: 800 }}>Zipeng</span> Liang</div>
+                   <div className="boxLeft"><span style={{fontWeight: 800}}>Zipeng</span> Liang</div>
                 </NavLink>
                 <div className="boxRight">
                    <NavLink exact to="/" activeClassName="selected">
@@ -115,9 +115,7 @@ function App() {
                    <NavLink exact to="/projects" activeClassName="selected">
                       <p>Projects</p>
                    </NavLink>
-                   <NavLink exact to="/resume" activeClassName="selected">
-                      <p>Resume</p>
-                   </NavLink>
+                   <a href="https://github.com/zipengliang21" target="_blank" rel="noreferrer"><p>Resume</p></a>
                 </div>
              </div>
           </HeaderWrapper>
@@ -133,8 +131,6 @@ function App() {
                        render={(props) => {
                           return <ProjectDetail project={project(projectData.data, props.match.params.id)}/>;
                        }}/>
-                <Route exact path="/resume">
-                </Route>
                 <Route path="*">
                    <NoMatch/>
                 </Route>
@@ -144,7 +140,7 @@ function App() {
              <div className="list">
                 <ul>
                    <li>© 2021 Zipeng Liang</li>
-                   <li><a href="https://github.com/zipengliang21" target="_blank">Github</a></li>
+                   <li><a href="https://github.com/zipengliang21" target="_blank" rel="noreferrer">Github</a></li>
                    <li>LinkedIn</li>
                    <li>Email</li>
                 </ul>
