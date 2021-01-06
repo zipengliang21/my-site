@@ -1,5 +1,7 @@
 {
   "name": "my-website",
+  "homepage": "https://zipengliang21.github.io/my-site-website",
+  "author": "Zipeng Liang",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -82,7 +84,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "deploy": "sh scripts/deploy.sh"
   },
   "eslintConfig": {
     "extends": [
