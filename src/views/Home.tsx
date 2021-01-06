@@ -104,7 +104,7 @@ function Home() {
                 <p>I am a <strong>full stack engineer</strong> that builds
                    <strong> modern software apps.</strong></p>
                 <div className="icon">
-                   <div><Github/></div>
+                   <div><a href="https://github.com/zipengliang21" target="_blank"><Github/></a></div>
                    <div><Linkedin/></div>
                 </div>
              </div>

@@ -144,7 +144,7 @@ function App() {
              <div className="list">
                 <ul>
                    <li>© 2021 Zipeng Liang</li>
-                   <li>Github</li>
+                   <li><a href="https://github.com/zipengliang21" target="_blank">Github</a></li>
                    <li>LinkedIn</li>
                    <li>Email</li>
                 </ul>
