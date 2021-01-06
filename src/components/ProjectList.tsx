@@ -35,8 +35,9 @@ const ProjectListWrapper = styled.div`
                 > p{
                   padding: 8px 0px;
                   color: rgba(0, 0, 0, 0.7);
-                  font-size: 1.4rem;
+                  font-size: 1.3rem;
                   line-height: 1.8;
+                  font-weight: 200;
                 }
                 .tag{
                   display: flex;

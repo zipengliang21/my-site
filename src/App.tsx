@@ -9,6 +9,7 @@ import projectData from "projects.json";
 
 const AppWrapper = styled.div`
   //background: #051221;
+  background: #FBFAF6;
   //color: #FFFFFF;
   display: flex;
   min-height: 100vh;
@@ -16,7 +17,8 @@ const AppWrapper = styled.div`
 `;
 
 const HeaderWrapper = styled.header`
-  background-color: rgb(250, 250, 250);
+  background-color: #FBFAF6;
+  border-bottom: 2px solid #f2f2f2;
   height: 60px;
   .selected{
       color: #333!important;
@@ -35,9 +37,12 @@ const HeaderWrapper = styled.header`
         text-decoration:none; 
       }
       .boxLeft{
-        text-transform: uppercase;
-        font-size: 1.5em;
-        color: #051221;
+          font-family: Poppins, sans-serif;
+          line-height: 1.8;
+          text-transform: uppercase;
+          color: rgb(3, 37, 108);
+          font-size: 1.4em;
+        //color: #051221;
       }
       .boxLeft::after {
         content: "◦◦◦";
@@ -49,8 +54,11 @@ const HeaderWrapper = styled.header`
         justify-content: flex-start;
         p{
           margin: 0px 35px;
-          font-size: 1.3em;
-          color: #051221;;
+          font-size: 1.2em;
+          font-family: Poppins, sans-serif;
+          line-height: 1.8;
+          font-weight: 200;
+          color: rgb(3, 37, 108);
         }
       }
    div{
@@ -64,13 +72,25 @@ const ContentWrapper = styled.section`
 `;
 
 const Footer = styled.footer`
+  display: block;
   text-align: center;
-  padding: 30px 0;
+  padding: 20px 0;
   color: #555;
-  background: #fafafa;
-  border-top: 1px solid #f2f2f2;
-  > p{
-    padding: 2px 0;  
+  background: #FBFAF6;
+  border-top: 2px solid #D2DFED;
+  .list{
+       > ul{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       padding: 25px 0;  
+         > li{
+           padding: 0 8px;
+           color: rgb(3, 37, 108);
+           font-size: 1.2rem;
+           line-height: 1.8;
+         }
+     }
   }
 `;
 
@@ -86,7 +106,7 @@ function App() {
           <HeaderWrapper>
              <div className="box">
                 <NavLink to="/">
-                   <div className="boxLeft"><strong>Zipeng Liang</strong></div>
+                   <div className="boxLeft"><span style={{ fontWeight: 800 }}>Zipeng</span> Liang</div>
                 </NavLink>
                 <div className="boxRight">
                    <NavLink exact to="/" activeClassName="selected">
@@ -121,7 +141,14 @@ function App() {
              </Switch>
           </ContentWrapper>
           <Footer>
-             <p>© <b>2021 Zipeng Liang</b></p>
+             <div className="list">
+                <ul>
+                   <li>© 2021 Zipeng Liang</li>
+                   <li>Github</li>
+                   <li>LinkedIn</li>
+                   <li>Email</li>
+                </ul>
+             </div>
           </Footer>
        </AppWrapper>
    );
