@@ -4,7 +4,7 @@ type LinkedinProps = {
    iconFill?: string;
 };
 
-const Linkedin = ({ iconFill = '#03256C' }: LinkedinProps) => {
+const Linkedin = ({ iconFill = '#5758BB' }: LinkedinProps) => {
    return (
        <svg
            xmlns="http://www.w3.org/2000/svg"

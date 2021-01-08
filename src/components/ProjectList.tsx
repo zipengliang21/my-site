@@ -19,10 +19,15 @@ const ProjectListWrapper = styled.div`
             > a{
               display: inline-flex;
               justify-content: space-between;
+              @media(max-width: 992px) {
+                  display: inline;
+                  text-align: center;
+              };
               .cover{
                 > img{
                   width: 145px;
                   border-radius: 10px;
+                  max-width: 100%;
                 }
               }
               .projectBrief{
@@ -31,6 +36,9 @@ const ProjectListWrapper = styled.div`
                 > h3{
                   font-size: 1.8rem;
                   color: rgb(51, 51, 51);
+                  @media(max-width: 992px) {
+                      text-align: center;
+                  };
                 }
                 > p{
                   padding: 8px 0px;
@@ -38,6 +46,9 @@ const ProjectListWrapper = styled.div`
                   font-size: 1.3rem;
                   line-height: 1.8;
                   font-weight: 200;
+                  @media(max-width: 992px) {
+                      text-align: center;
+                  };
                 }
                 .tag{
                   display: flex;

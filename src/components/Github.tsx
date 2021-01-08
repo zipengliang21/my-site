@@ -5,7 +5,7 @@ type GithubProps = {
    iconFill?: string;
 };
 
-const Github = ({ iconFill = '#03256C' }: GithubProps) => {
+const Github = ({ iconFill = '#5758BB' }: GithubProps) => {
    return (
        <svg
            xmlns="http://www.w3.org/2000/svg"

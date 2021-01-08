@@ -19,9 +19,16 @@ const HomeWrapper = styled.div`
        display: flex;
        text-align: center;
        margin: 0 auto;
+       @media(max-width: 992px) {
+          flex-direction: column;
+       };
        .image{
          align-self: flex-end;
          flex-shrink: 0;
+         @media(max-width: 992px) {
+            height: 100%;
+            align-self: center;
+         };
          h2{
            padding: 12px 0px;
            font-size: 20px;
@@ -29,6 +36,7 @@ const HomeWrapper = styled.div`
          }
          img{
            width: 250px;
+           max-width: 100%;
            height: 250px;
            border-radius: 120px;
            margin-top: 20px;
@@ -58,10 +66,21 @@ const HomeWrapper = styled.div`
           font-weight: 100;
           color: rgb(44, 49, 55);
           text-align: left;
+          @media(max-width: 992px) {
+             margin-top: 0;
+             margin-left: 0;
+             text-align: center;
+             width: 600px;
+             max-width: 100%;
+             font-size: 1.6rem;
+          };
           .icon{
             display: flex;
             margin-top: 20px;
             margin-left: -15px;
+            @media(max-width: 992px) {
+             justify-content: center;
+            };
             > div{
               padding: 0 10px;
             }
@@ -80,7 +99,15 @@ const HomeWrapper = styled.div`
             font-weight: 800;
             line-height: 1.4;
             text-align: center;
+            @media(max-width: 992px) {
+                font-size: 2.0rem;
+            };
           }
+        }
+        .projectList{
+            @media(max-width: 992px) {
+                margin: 0 auto;
+            };
         }
         p{
           color: rgb(3, 37, 108);
@@ -117,7 +144,7 @@ function Home() {
                    <h2>Recent Projects</h2>
                 </div>
              </Fade>
-             <ProjectList dataSource={projectData.data}/>
+             <ProjectList className="projectList" dataSource={projectData.data}/>
              <Fade bottom>
                 <Button to="/projects">See all projects</Button>
              </Fade>
