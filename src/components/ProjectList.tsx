@@ -5,7 +5,7 @@ import Fade from "react-reveal/Fade";
 
 const p1 = require("../assets/project/Morney.png");
 const p2 = require("../assets/project/ZL.png");
-const p3 = require("../assets/avatar.png");
+const p3 = require("../assets/project/RateMyRestaurantLogin.png");
 
 const ProjectListWrapper = styled.div`
     margin-top: 80px;

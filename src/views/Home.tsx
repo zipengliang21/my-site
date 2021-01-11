@@ -132,7 +132,7 @@ function Home() {
                    <strong> modern software apps.</strong></p>
                 <div className="icon">
                    <div><a href="https://github.com/zipengliang21" target="_blank" rel="noreferrer"><Github/></a></div>
-                   <div><Linkedin/></div>
+                   <div><a href="https://www.linkedin.com/in/zipeng-liang/" target="_blank" rel="noreferrer"><Linkedin/></a></div>
                 </div>
              </div>
 

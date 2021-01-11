@@ -156,7 +156,8 @@ function App() {
                    <NavLink exact to="/projects" activeClassName="selected">
                       <p>Projects</p>
                    </NavLink>
-                   <a href="https://github.com/zipengliang21" target="_blank" rel="noreferrer"><p>Resume</p></a>
+                   <a href="https://drive.google.com/file/d/1kV0BcyDl2WwoR9q_b0Lo5g48TbTRJr_2/view?usp=sharing"
+                      target="_blank" rel="noreferrer"><p>Resume</p></a>
                 </div>
              </div>
           </HeaderWrapper>
@@ -182,8 +183,8 @@ function App() {
              <div className="list">
                 <ul>
                    <li><a href="https://github.com/zipengliang21" target="_blank" rel="noreferrer">Github</a></li>
-                   <li>LinkedIn</li>
-                   <li>Email</li>
+                   <li><a href="https://www.linkedin.com/in/zipeng-liang/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+                   <li><a href="mailto:zipengliang21@gmail.com">Email</a></li>
                 </ul>
              </div>
           </Footer>
