@@ -5,14 +5,9 @@ import Home from "./views/Home";
 import NoMatch from "./views/NoMatch";
 import Projects from "./views/Projects";
 import ProjectDetail from "./views/ProjectDetail";
-import {useTheme } from 'utils/context';
+import {ThemeEnum, useTheme} from "utils/context";
 import projectData from "projects.json";
 import ThemeSwitch from "components/ThemeSwitch";
-
-export enum ThemeEnum {
-   light = 'light',
-   dark = 'dark'
-}
 
 const AppWrapper = styled.div`
   //background: #051221;
@@ -27,7 +22,7 @@ const HeaderWrapper = styled.header`
   border-bottom: 2px solid ${props => props.theme === ThemeEnum.light? "#f2f2f2" : "#051221"};
   height: 60px;
   @media(max-width: 576px) {
-    height: 160px;
+    height: 250px;
   };
   .selected{
       color: #5758BB!important;
@@ -109,7 +104,7 @@ const Footer = styled.footer`
   justify-content: center;
   align-items: center;
   padding: 20px 0;
-  color: rgb(3, 37, 108);
+  color: ${props => props.theme === ThemeEnum.light? "rgb(3, 37, 108)" : "#80B0EB"};
   background: ${props => props.theme === ThemeEnum.light? "#FBFAF6" : "#051221"};
   border-top: 2px solid ${props => props.theme === ThemeEnum.light? "#D2DFED" : "#051221"};
   font-size: 1.2rem;
@@ -135,7 +130,7 @@ const Footer = styled.footer`
        };
          > li{
            padding: 0 8px;
-           color: rgb(3, 37, 108);
+           color: ${props => props.theme === ThemeEnum.light? "rgb(3, 37, 108)" : "#80B0EB"};
            line-height: 1.8;
          }
      }
@@ -157,7 +152,6 @@ const ModifiedThemeSwitch: any = styled(ThemeSwitch)`
 
     @media(max-width: 576px) {
         margin-left: 0;
-        margin-top: 20px;
     };
 `;
 
@@ -187,14 +181,14 @@ function App() {
           <ContentWrapper>
              <Switch>
                 <Route exact path="/">
-                   <Home/>
+                   <Home theme={theme}/>
                 </Route>
                 <Route exact path="/projects">
-                   <Projects/>
+                   <Projects theme={theme}/>
                 </Route>
                 <Route exact path="/projects/:id"
                        render={(props) => {
-                          return <ProjectDetail project={project(projectData.data, props.match.params.id)}/>;
+                          return <ProjectDetail theme={theme} project={project(projectData.data, props.match.params.id)}/>;
                        }}/>
                 <Route path="*">
                    <NoMatch/>

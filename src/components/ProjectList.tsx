@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 import Fade from "react-reveal/Fade";
+import {ThemeEnum} from "../utils/context";
 
 const p1 = require("../assets/project/Morney.png");
 const p2 = require("../assets/project/ZL.png");
@@ -35,14 +36,14 @@ const ProjectListWrapper = styled.div`
                 padding-left: 15px;
                 > h3{
                   font-size: 1.8rem;
-                  color: rgb(51, 51, 51);
+                  color: ${props => props.theme === ThemeEnum.light? "rgb(51, 51, 51)" : "#80B1EC"};
                   @media(max-width: 992px) {
                       text-align: center;
                   };
                 }
                 > p{
                   padding: 8px 0px;
-                  color: rgba(0, 0, 0, 0.7);
+                  color: ${props => props.theme === ThemeEnum.light? "rgba(0, 0, 0, 0.7)" : "#EAEAEA"};
                   font-size: 1.3rem;
                   line-height: 1.8;
                   font-weight: 200;
@@ -69,9 +70,9 @@ const ProjectListWrapper = styled.div`
       }
 `;
 
-function ProjectList({dataSource}: any) {
+function ProjectList({dataSource, theme}: any) {
    return (
-       <ProjectListWrapper>
+       <ProjectListWrapper theme={theme}>
           <ul>
              {
                 dataSource && dataSource.map((item: any, index: number) =>

@@ -6,6 +6,7 @@ import Fade from "react-reveal/Fade";
 import {Button} from "../components/Button";
 import Github from "../components/Github";
 import Linkedin from "../components/Linkedin";
+import {ThemeEnum} from "../utils/context";
 
 const avatar = require("../assets/avatar.png");
 
@@ -32,7 +33,7 @@ const HomeWrapper = styled.div`
          h2{
            padding: 12px 0px;
            font-size: 20px;
-           color: rgb(44, 49, 55);
+           color: ${props => props.theme === ThemeEnum.light? "rgb(44, 49, 55)" : "#80B1EC"};
          }
          img{
            width: 250px;
@@ -49,12 +50,12 @@ const HomeWrapper = styled.div`
               background: rgba(87, 199, 255, 0.1);
               margin: 12px 5px;
               border-radius: 3px;
-              color: rgb(3, 37, 108);
+              color:${props => props.theme === ThemeEnum.light? "rgb(44, 49, 55)" : "#80B1EC"};
            }      
          }
          p{
            padding: 12px 0px;
-           color: rgba(0, 0, 0, 0.7);
+           color: ${props => props.theme === ThemeEnum.light? "rgba(0, 0, 0, 0.7)" : "#EAEAEA"};
          }
        }
        .description{
@@ -64,7 +65,7 @@ const HomeWrapper = styled.div`
           font-size: 1.8rem;
           line-height: 1.5;
           font-weight: 100;
-          color: rgb(44, 49, 55);
+          color: ${props => props.theme === ThemeEnum.light? "rgba(0, 0, 0, 0.7)" : "#EAEAEA"};
           text-align: left;
           @media(max-width: 992px) {
              margin-top: 0;
@@ -95,7 +96,7 @@ const HomeWrapper = styled.div`
           h2{
             font-size: 3.0rem;
             padding-bottom: 12px;
-            color: rgb(3, 37, 108);
+            color: ${props => props.theme === ThemeEnum.light? "rgb(3, 37, 108)" : "#80B2ED"};
             font-weight: 800;
             line-height: 1.4;
             text-align: center;
@@ -115,10 +116,10 @@ const HomeWrapper = styled.div`
     }
 `;
 
-function Home() {
+function Home(props: any) {
    return (
-       <HomeWrapper>
-          <section className="brief">
+       <HomeWrapper theme={props.theme}>
+          <section className="brief" >
              <div className="image">
                 <img src={avatar} alt={"Jepson"}/>
                 <h2>Zipeng Liang (Jepson)</h2>
@@ -144,9 +145,9 @@ function Home() {
                    <h2>Recent Projects</h2>
                 </div>
              </Fade>
-             <ProjectList className="projectList" dataSource={projectData.data}/>
+             <ProjectList theme={props.theme} className="projectList" dataSource={projectData.data}/>
              <Fade bottom>
-                <Button to="/projects">See all projects</Button>
+                <Button theme={props.theme} to="/projects">See all projects</Button>
              </Fade>
           </section>
        </HomeWrapper>

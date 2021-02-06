@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom";
 import styled from "styled-components";
+import {ThemeEnum} from "../utils/context";
 
 const Button = styled(Link)`
     font-size: 1.2rem;
@@ -10,8 +11,8 @@ const Button = styled(Link)`
     height: 40px;
     line-height: 37px;
     padding: 0 20px;
-    background-color: #03256C;
-    color: #EAEAEA;
+    background-color: ${props => props.theme === ThemeEnum.light? "#03256C" : "#80B1EC"};
+    color: ${props => props.theme === ThemeEnum.light? "#EAEAEA" : "#3C597B"};
     border: 2px solid #03256C;
     border-radius: 5px;
     -webkit-appearance: none;
@@ -22,8 +23,8 @@ const Button = styled(Link)`
         cursor: pointer;
         text-decoration: none;
         background-color: rgba(0, 0, 0, 0);
-        color: #03256C;
-        border: 2px solid #03256C;
+        color: ${props => props.theme === ThemeEnum.light? "#03256C" : "#80B1EC"};
+        border: 2px solid ${props => props.theme === ThemeEnum.light? "#03256C" : "#80B1EC"};
     }
 `;
 

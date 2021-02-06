@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ProjectList from "../components/ProjectList";
 import projectData from "../projects.json"
+import {ThemeEnum} from "../utils/context";
 
 const ProjectsWrapper = styled.div`
    flex: 1;
@@ -15,23 +16,23 @@ const ProjectsWrapper = styled.div`
      h3{
        font-size: 30px;
        padding-bottom: 12px;
-       color: rgba(0,0,0,.8);
+       color: ${props => props.theme === ThemeEnum.light? "#343434" : "#EAEAEA"};
        font-weight: 400;
      }
      p{
-      color: rgba(0, 0, 0, 0.7);
+      color: ${props => props.theme === ThemeEnum.light? "#343434" : "#EAEAEA"};
      }
    }
 `;
 
-function Projects() {
+function Projects(props: any) {
    return (
-       <ProjectsWrapper>
+       <ProjectsWrapper theme={props.theme}>
           <div className="title">
              <h3>Recent Projects</h3>
              <p>A collection of different things I have worked on.</p>
           </div>
-          <ProjectList dataSource ={projectData.data}/>
+          <ProjectList theme={props.theme} dataSource ={projectData.data}/>
        </ProjectsWrapper>
    );
 }

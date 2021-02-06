@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {ThemeEnum} from "../utils/context";
 const p1 = require("../assets/project/Morney-money.png");
 const p2 = require("../assets/project/ZL.png");
 const p3 = require("../assets/project/RateMyRestaurantLogin.png");
@@ -32,16 +33,13 @@ const Wrapper = styled.div`
            .title{
                h1{
                    font-size: 24px;
-               }
-               p{
-                   color: #999;
-                   padding-top: 8px;
-                   font-size: 13px;
+                   color: ${props => props.theme === ThemeEnum.light? "#343434" : "#80B1EC"};
                }
            }
            .content{
                padding: 20px 0px;
                p{
+                   color: ${props => props.theme === ThemeEnum.light? "#343434" : "#EAEAEA"};
                    padding-top: 10px;
                    line-height: 2;
                }
@@ -57,7 +55,7 @@ const Wrapper = styled.div`
 function ProjectDetail(props: any) {
    const project = props.project;
    return (
-       <Wrapper>
+       <Wrapper theme={props.theme}>
           <div>
              <img src={project.id === 1 ? p1 : project.id === 2 ? p2 : p3} alt={"Project"}/>
              <div className="box">
