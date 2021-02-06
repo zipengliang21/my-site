@@ -5,19 +5,26 @@ import Home from "./views/Home";
 import NoMatch from "./views/NoMatch";
 import Projects from "./views/Projects";
 import ProjectDetail from "./views/ProjectDetail";
+import {useTheme } from 'utils/context';
 import projectData from "projects.json";
+import ThemeSwitch from "components/ThemeSwitch";
+
+export enum ThemeEnum {
+   light = 'light',
+   dark = 'dark'
+}
 
 const AppWrapper = styled.div`
   //background: #051221;
-  background: #FBFAF6;
+  background: ${props => props.theme === ThemeEnum.light? "#FBFAF6" : "#051221"};
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 `;
 
 const HeaderWrapper = styled.header`
-  background-color: #FBFAF6;
-  border-bottom: 2px solid #f2f2f2;
+  background-color: ${props => props.theme === ThemeEnum.light? "#FBFAF6" : "#051221"};
+  border-bottom: 2px solid ${props => props.theme === ThemeEnum.light? "#f2f2f2" : "#051221"};
   height: 60px;
   @media(max-width: 576px) {
     height: 160px;
@@ -46,7 +53,7 @@ const HeaderWrapper = styled.header`
           font-family: Poppins, sans-serif;
           line-height: 1.8;
           text-transform: uppercase;
-          color: rgb(3, 37, 108);
+          color: ${props => props.theme === ThemeEnum.light? "rgb(3, 37, 108)" : "#80B1EC"};
           font-size: 1.4em;
           @media(max-width: 576px) {
             margin: 10px 0 10px 0;
@@ -76,7 +83,7 @@ const HeaderWrapper = styled.header`
           font-family: Poppins, sans-serif;
           line-height: 1.8;
           font-weight: 200;
-          color: rgb(3, 37, 108);
+          color: ${props => props.theme === ThemeEnum.light? "rgb(3, 37, 108)" : "#80B1EC"};
           @media(max-width: 992px) {
               margin: 0 20px;
               text-align: center;
@@ -103,8 +110,8 @@ const Footer = styled.footer`
   align-items: center;
   padding: 20px 0;
   color: rgb(3, 37, 108);
-  background: #FBFAF6;
-  border-top: 2px solid #D2DFED;
+  background: ${props => props.theme === ThemeEnum.light? "#FBFAF6" : "#051221"};
+  border-top: 2px solid ${props => props.theme === ThemeEnum.light? "#D2DFED" : "#051221"};
   font-size: 1.2rem;
   @media(max-width: 992px) {
       display: flex;
@@ -141,10 +148,25 @@ const project = (dataSource: any, id: string) => {
    })[0];
 };
 
+const ModifiedThemeSwitch: any = styled(ThemeSwitch)`
+    border-radius: 50px;
+    min-width: 50px;
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+
+    @media(max-width: 576px) {
+        margin-left: 0;
+        margin-top: 20px;
+    };
+`;
+
 function App() {
+   const { theme, toggleTheme } = useTheme();
+
    return (
-       <AppWrapper>
-          <HeaderWrapper>
+       <AppWrapper theme={theme}>
+          <HeaderWrapper theme={theme}>
              <div className="box">
                 <NavLink to="/">
                    <div className="boxLeft"><span style={{fontWeight: 800}}>Zipeng</span> Liang</div>
@@ -159,6 +181,7 @@ function App() {
                    <a href="https://drive.google.com/file/d/1kV0BcyDl2WwoR9q_b0Lo5g48TbTRJr_2/view?usp=sharing"
                       target="_blank" rel="noreferrer"><p>Resume</p></a>
                 </div>
+                <ModifiedThemeSwitch theme={theme} onChange={toggleTheme} />
              </div>
           </HeaderWrapper>
           <ContentWrapper>
@@ -178,7 +201,7 @@ function App() {
                 </Route>
              </Switch>
           </ContentWrapper>
-          <Footer>
+          <Footer theme={theme}>
              <div>© 2021 Zipeng Liang</div>
              <div className="list">
                 <ul>
