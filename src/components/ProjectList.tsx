@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {Link} from "react-router-dom";
 import Fade from "react-reveal/Fade";
 import {ThemeEnum} from "../utils/context";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const p1 = require("../assets/project/Morney.png");
 const p2 = require("../assets/project/ZL.png");
@@ -80,7 +81,7 @@ function ProjectList({dataSource, theme}: any) {
                        <li key={item.id}>
                           <Link to={`/projects/${item.id}`}>
                              <div className="cover">
-                                <img src={item.id === 1 ? p1 : item.id === 2 ? p2 : p3} alt={"Project"}/>
+                                <LazyLoadImage src={item.id === 1 ? p1 : item.id === 2 ? p2 : p3} alt={"Project"}/>
                              </div>
                              <div className="projectBrief">
                                 <h3>{item.title}</h3>

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Img from 'gatsby-image';
+// import Img from 'gatsby-image';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ProjectList from "components/ProjectList";
 import projectData from "../projects.json";
 import Fade from "react-reveal/Fade";
@@ -11,15 +12,15 @@ import {ThemeEnum} from "../utils/context";
 
 const avatar = require("../assets/avatar.png");
 
-const Headshot = styled(Img)`
-      align-self: flex-end;
-      flex-shrink: 0;
-      @media(max-width: 992px) {
-         height: 100%;
-         align-self: center;
-         transition-delay: 500ms;
-      };
-`;
+// const Headshot = styled(Img)`
+//       align-self: flex-end;
+//       flex-shrink: 0;
+//       @media(max-width: 992px) {
+//          height: 100%;
+//          align-self: center;
+//          transition-delay: 500ms;
+//       };
+// `;
 
 const HomeWrapper = styled.div`
     flex: 1;
@@ -132,7 +133,8 @@ function Home(props: any) {
        <HomeWrapper theme={props.theme}>
           <section className="brief" >
              <div className="image">
-                <img src={avatar} className = "img-fluid" alt={"Jepson"}/>
+                {/*<img src={avatar} className = "img-fluid" alt={"Jepson"}/>*/}
+                <LazyLoadImage src={avatar} alt={"Jepson"}/>
                 <h2>Zipeng Liang (Jepson)</h2>
                 <ul>
                    <li>Software Engineer</li>

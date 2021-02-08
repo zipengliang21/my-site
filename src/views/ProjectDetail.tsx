@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {ThemeEnum} from "../utils/context";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 const p1 = require("../assets/project/Morney-money.png");
 const p2 = require("../assets/project/ZL.png");
 const p3 = require("../assets/project/RateMyRestaurantLogin.png");
@@ -57,7 +58,7 @@ function ProjectDetail(props: any) {
    return (
        <Wrapper theme={props.theme}>
           <div>
-             <img src={project.id === 1 ? p1 : project.id === 2 ? p2 : p3} alt={"Project"}/>
+             <LazyLoadImage src={project.id === 1 ? p1 : project.id === 2 ? p2 : p3} alt={"Project"}/>
              <div className="box">
                 <div className="title">
                    <h1>{project.title}</h1>
