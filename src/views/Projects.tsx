@@ -7,7 +7,7 @@ import {ThemeEnum} from "../utils/context";
 
 const ProjectsWrapper = styled.div`
    flex: 1;
-   width: 70%;
+   max-width: 700px;
    margin: 0px auto;
    text-align: center;
    padding-top: 40px;
