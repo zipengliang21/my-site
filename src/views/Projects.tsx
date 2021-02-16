@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ProjectList from "../components/ProjectList";
 import projectData from "../projects.json"
+import axios from 'axios';
 import {ThemeEnum} from "../utils/context";
 
 const ProjectsWrapper = styled.div`
@@ -26,13 +27,17 @@ const ProjectsWrapper = styled.div`
 `;
 
 function Projects(props: any) {
+   let projects;
+   axios.get('https://zipeng-my-site.herokuapp.com/v1/projects').then((response: any) => {
+      projects = response;
+   })
    return (
        <ProjectsWrapper theme={props.theme}>
           <div className="title">
              <h3>Recent Projects</h3>
              <p>A collection of different things I have worked on.</p>
           </div>
-          <ProjectList theme={props.theme} dataSource ={projectData.data}/>
+          <ProjectList theme={props.theme} dataSource={projectData.data}/>
        </ProjectsWrapper>
    );
 }
