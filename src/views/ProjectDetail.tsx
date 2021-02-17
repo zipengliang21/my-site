@@ -67,8 +67,20 @@ function ProjectDetail(props: any) {
                    {project.descriptions.map((description: string, index: number) => {
                       return <p key={index}>{description}</p>;
                    })}
-                   {project.preview? <p>{`Preview Link: ` + project.preview}</p> : null}
-                   {project.sourceCode? <p>{`Source Code Link: ` + project.sourceCode}</p> : null}
+                   {project.preview?
+                       <p>Preview Link: <a href={project.preview} target="_blank" rel="noreferrer">
+                          <p>{project.preview}
+                       </p>
+                       </a>
+                       </p>
+                        : null}
+                   {project.sourceCode?
+                       <p>Source Code Link: <a href={project.sourceCode} target="_blank" rel="noreferrer">
+                          <p>{project.sourceCode}
+                          </p>
+                       </a>
+                       </p>
+                       : null}
                 </section>
              </div>
           </div>
