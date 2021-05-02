@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {ThemeEnum} from "../utils/context";
+import {ThemeEnum} from "../hooks/context";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 const p1 = require("../assets/project/Morney-money.png");
 const p2 = require("../assets/project/ZL.png");

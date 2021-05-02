@@ -3,12 +3,12 @@ import styled from "styled-components";
 // import Img from 'gatsby-image';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ProjectList from "components/ProjectList";
-import projectData from "../projects.json";
 import Fade from "react-reveal/Fade";
 import {Button} from "../components/Button";
 import Github from "../components/Github";
 import Linkedin from "../components/Linkedin";
-import {ThemeEnum} from "../utils/context";
+import {ThemeEnum} from "../hooks/context";
+import {useProjects} from "../hooks/useProjects";
 
 const avatar = require("../assets/avatar.png");
 
@@ -129,6 +129,7 @@ const HomeWrapper = styled.div`
 `;
 
 function Home(props: any) {
+   const {projects} = useProjects();
    return (
        <HomeWrapper theme={props.theme}>
           <section className="brief" >
@@ -158,7 +159,7 @@ function Home(props: any) {
                    <h2>Recent Projects</h2>
                 </div>
              </Fade>
-             <ProjectList theme={props.theme} className="projectList" dataSource={projectData.data}/>
+             <ProjectList theme={props.theme} className="projectList" dataSource={projects}/>
              <Fade bottom>
                 <Button theme={props.theme} to="/projects">See all projects</Button>
              </Fade>

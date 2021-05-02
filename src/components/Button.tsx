@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import styled from "styled-components";
-import {ThemeEnum} from "../utils/context";
+import {ThemeEnum} from "../hooks/context";
 
 const Button = styled(Link)`
     font-size: 1.2rem;

@@ -5,7 +5,7 @@ import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 
 // eslint-disable-next-line no-unused-vars
-import { ThemeEnum } from 'utils/context';
+import { ThemeEnum } from 'hooks/context';
 import MoonSVG from 'components/Moon';
 
 const width = 56;

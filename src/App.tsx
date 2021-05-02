@@ -5,9 +5,9 @@ import Home from "./views/Home";
 import NoMatch from "./views/NoMatch";
 import Projects from "./views/Projects";
 import ProjectDetail from "./views/ProjectDetail";
-import {ThemeEnum, useTheme} from "utils/context";
-import projectData from "projects.json";
+import {ThemeEnum, useTheme} from "hooks/context";
 import ThemeSwitch from "components/ThemeSwitch";
+import {useProjects} from "./hooks/useProjects";
 
 const AppWrapper = styled.div`
   //background: #051221;
@@ -138,7 +138,8 @@ const Footer = styled.footer`
 `;
 
 const project = (dataSource: any, id: string) => {
-   return dataSource.filter((project: any) => {
+   return dataSource.data.filter((project: any) => {
+      console.log(project.id)
       return project.id === parseInt(id);
    })[0];
 };
@@ -157,7 +158,7 @@ const ModifiedThemeSwitch: any = styled(ThemeSwitch)`
 
 function App() {
    const { theme, toggleTheme } = useTheme();
-
+   const {projects} = useProjects();
    return (
        <AppWrapper theme={theme}>
           <HeaderWrapper theme={theme}>
@@ -188,7 +189,7 @@ function App() {
                 </Route>
                 <Route exact path="/projects/:id"
                        render={(props) => {
-                          return <ProjectDetail theme={theme} project={project(projectData.data, props.match.params.id)}/>;
+                          return <ProjectDetail theme={theme} project={project(projects, props.match.params.id)}/>;
                        }}/>
                 <Route path="*">
                    <NoMatch/>

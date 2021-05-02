@@ -2,9 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 import Fade from "react-reveal/Fade";
-import {ThemeEnum} from "../utils/context";
+import {ThemeEnum} from "../hooks/context";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-
 const p1 = require("../assets/project/Morney.png");
 const p2 = require("../assets/project/ZL.png");
 const p3 = require("../assets/project/RateMyRestaurantLogin.png");
@@ -76,7 +75,7 @@ function ProjectList({dataSource, theme}: any) {
        <ProjectListWrapper theme={theme}>
           <ul>
              {
-                dataSource && dataSource.map((item: any, index: number) =>
+                dataSource.data && dataSource.data.map((item: any, index: number) =>
                     <Fade {...(index % 2 === 0 ? {left: true} : {right: true})}>
                        <li key={item.id}>
                           <Link to={`/projects/${item.id}`}>
