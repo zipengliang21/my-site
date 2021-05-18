@@ -132,7 +132,7 @@ const HomeWrapper = styled.div`
 function Home(props: any) {
    const {projects} = useProjects();
    let projectWrapper = <Spinner theme={props.theme}/>;
-   if(projects) {
+   if(projects.length !== 0) {
       projectWrapper = <ProjectList theme={props.theme} className="projectList" dataSource={projects}/>
    }
    return (

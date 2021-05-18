@@ -6,7 +6,7 @@ const useProjects = () => {
    useEffect(() => {
       axios.get('https://zipeng-my-site.herokuapp.com/v1/projects').then((response: any) => {
          setProjects(response)
-         console.log(projects)
+         // console.log(projects)
       });
    }, []);
 
