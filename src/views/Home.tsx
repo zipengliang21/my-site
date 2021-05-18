@@ -9,6 +9,7 @@ import Github from "../components/Github";
 import Linkedin from "../components/Linkedin";
 import {ThemeEnum} from "../hooks/context";
 import {useProjects} from "../hooks/useProjects";
+import Spinner from "components/Spinner";
 
 const avatar = require("../assets/avatar.png");
 
@@ -130,6 +131,10 @@ const HomeWrapper = styled.div`
 
 function Home(props: any) {
    const {projects} = useProjects();
+   let projectWrapper = <Spinner theme={props.theme}/>;
+   if(projects) {
+      projectWrapper = <ProjectList theme={props.theme} className="projectList" dataSource={projects}/>
+   }
    return (
        <HomeWrapper theme={props.theme}>
           <section className="brief" >
@@ -159,7 +164,7 @@ function Home(props: any) {
                    <h2>Recent Projects</h2>
                 </div>
              </Fade>
-             <ProjectList theme={props.theme} className="projectList" dataSource={projects}/>
+             {projectWrapper}
              <Fade bottom>
                 <Button theme={props.theme} to="/projects">See all projects</Button>
              </Fade>
