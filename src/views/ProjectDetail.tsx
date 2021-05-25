@@ -5,6 +5,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 const p1 = require("../assets/project/Morney-money.png");
 const p2 = require("../assets/project/ZL.png");
 const p3 = require("../assets/project/RateMyRestaurantLogin.png");
+const p4 = require("../assets/project/Gomoku.png");
 
 const Wrapper = styled.div`
     flex: 1;
@@ -58,7 +59,7 @@ function ProjectDetail(props: any) {
    return (
        <Wrapper theme={props.theme}>
           <div>
-             <LazyLoadImage src={project.id === 1 ? p1 : project.id === 2 ? p2 : p3} alt={"Project"}/>
+             <LazyLoadImage src={project.id === 1 ? p1 : project.id === 2 ? p2 : project.id === 3 ? p3 : p4} alt={"Project"}/>
              <div className="box">
                 <div className="title">
                    <h1>{project.title}</h1>

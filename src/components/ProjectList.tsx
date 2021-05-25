@@ -7,6 +7,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 const p1 = require("../assets/project/Morney.png");
 const p2 = require("../assets/project/ZL.png");
 const p3 = require("../assets/project/RateMyRestaurantLogin.png");
+const p4 = require("../assets/project/Gomoku.png");
 
 const ProjectListWrapper = styled.div`
     margin-top: 80px;
@@ -80,7 +81,8 @@ function ProjectList({dataSource, theme}: any) {
                        <li key={item.id}>
                           <Link to={`/projects/${item.id}`}>
                              <div className="cover">
-                                <LazyLoadImage src={item.id === 1 ? p1 : item.id === 2 ? p2 : p3} alt={"Project"}/>
+                                <LazyLoadImage src={item.id === 1 ? p1 : item.id === 2 ? p2 : item.id === 3 ? p3 : p4}
+                                               alt={"Project"}/>
                              </div>
                              <div className="projectBrief">
                                 <h3>{item.title}</h3>
