@@ -19,13 +19,16 @@ export const useTheme = () => {
    // Set the default theme state to the value stored in localStorage and fallback
    // to 'dark' if no value is found
 
-   if(!window.localStorage.getItem("theme") ||
-       window.localStorage.getItem("theme") === ThemeEnum.dark) {
-      window.localStorage.setItem("theme", ThemeEnum.dark);
-   }
+   useEffect(() => {
+      if(!window.localStorage.getItem("theme") ||
+          window.localStorage.getItem("theme") === ThemeEnum.dark) {
+         window.localStorage.setItem("theme", ThemeEnum.dark);
+      }
+      const initialTheme =window.localStorage.getItem("theme");
+      if(initialTheme) setTheme(initialTheme);
+   }, []);
 
-   const initialTheme =window.localStorage.getItem("theme");
-   const [theme, setTheme] = useState(initialTheme)
+   const [theme, setTheme] = useState("");
 
    /**
     * Toggle between light and dark themes and set the current theme
