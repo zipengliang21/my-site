@@ -173,7 +173,7 @@ function App() {
                    <NavLink exact to="/projects" activeClassName="selected">
                       <p>Projects</p>
                    </NavLink>
-                   <a href="https://drive.google.com/file/d/1xq6ytQPKb9tBqY7l99Nd2bnLyz70HHr1/view?usp=sharing"
+                   <a href="https://drive.google.com/file/d/1MmR-s5Milc5HOUykkD-MLEJvvlp8TwaN/view?usp=sharing"
                       target="_blank" rel="noreferrer"><p>Resume</p></a>
                 </div>
                 <ModifiedThemeSwitch theme={theme} onChange={toggleTheme} />
